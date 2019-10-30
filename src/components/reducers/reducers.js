@@ -4,12 +4,14 @@ import {
 } from '../actions/action'
 import {combineReducers} from "redux";
 
-const INITIAL_STATE = {messages: [], loading:false, error: null};
+const INITIAL_STATE = {messages: [], loading:false, error: null, username:''};
 
 const messages = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case'ADD_MESSAGE':
-            return {messages:[...state.messages, {username: '@username', message:action.text, sentAt:new Date()}],loading:false, error:false}
+            return {messages:[...state.messages, {username: state.username, message:action.text, sentAt:new Date()}],loading:false, error:false}
+        case'ADD_USERNAME':
+            return {...state,username:action.username}
         case 'GET_MESSAGE':
             return {...state, loading:true}
         case 'GET_MESSAGE_SUCCESS':

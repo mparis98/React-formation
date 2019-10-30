@@ -3,27 +3,55 @@ import './App.css';
 import Chat from './components/Chat.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import store from './components/containers/Store'
-import ReduxThunk from 'redux-thunk';
 
 import {Provider} from "react-redux";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Login from "./components/Login";
 
 
 function App() {
     return (
-        <Provider store={store}>
         <div className="App">
-            <div className="container">
-            <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
-                    <Chat>
-                    </Chat>
+            <Router>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/login">Login</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-3"></div>
+                                <div className="col-md-6">
+                                    <Provider store={store}>
+                                        <Route exact path="/">
+                                            <Login/>
+                                        </Route>
+                                        <Route path="/chat">
+                                            <Chat/>
+                                        </Route>
+                                    </Provider>
+                                </div>
+                                <div className="col-md-3"></div>
+                            </div>
+                        </div>
+                    </Switch>
+                    {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
                 </div>
-                <div className="col-md-3"></div>
-            </div>
-            </div>
+            </Router>
         </div>
-        </Provider>
     );
 }
 
