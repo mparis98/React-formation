@@ -9,7 +9,7 @@ const INITIAL_STATE = {messages: [], loading:false, error: null};
 const messages = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case'ADD_MESSAGE':
-            return {...state, messages: [{username: '@username', text: action.text, date: new Date()}],loading:false, error:null}
+            return {messages:[...state.messages, {username: '@username', message:action.text, sentAt:new Date()}],loading:false, error:false}
         case 'GET_MESSAGE':
             return {...state, loading:true}
         case 'GET_MESSAGE_SUCCESS':

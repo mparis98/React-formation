@@ -18,7 +18,7 @@ class MessageList extends React.Component{
         return (
             <div className='marginTop'>
                 {this.props.messages.messages.map((item, i) => (
-                    <MessageItem username={item.username} text={item.text} date={new Date(item.sentAt).toLocaleTimeString()}/>
+                    <MessageItem username={item.username} text={item.message} date={new Date(item.sentAt).toLocaleTimeString()}/>
                 ))
                 }
 

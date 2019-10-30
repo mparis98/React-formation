@@ -31,9 +31,4 @@ class MessageItem extends React.Component {
     }
 }
 
-MessageItem.defaultProps = {
-    username: '@username',
-    text: 'Voici un text'
-};
-
 export default MessageItem;
