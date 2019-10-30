@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import MessageList from "./MessageList";
 import { connect } from 'react-redux'
 import { addMessage } from './actions/action'
 

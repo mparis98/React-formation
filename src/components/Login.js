@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {connect} from 'react-redux';
-import store from './containers/Store';
 import {addUsername} from "./actions/action";
 import {
     useHistory,

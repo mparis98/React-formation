@@ -3,20 +3,11 @@
  */
 
 export const ADD_MESSAGE = 'ADD_MESSAGE';
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const GET_MESSAGE = 'GET_MESSAGE';
 export const GET_MESSAGE_SUCCESS = 'GET_MESSAGE_SUCCESS';
 export const GET_MESSAGE_ERROR = 'GET_MESSAGE_ERROR';
 export const ADD_USERNAME = 'ADD_USERNAME';
 
-/*
- * other constants
- */
-export const VisibilityFilters = {
-    SHOW_ALL: 'SHOW_ALL',
-    SHOW_COMPLETED: 'SHOW_COMPLETED',
-    SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
 
 /*
  * action creators

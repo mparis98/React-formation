@@ -1,14 +1,9 @@
 import React from 'react';
-import Chat from "./Chat";
 import MessageItem from "./MessageItem";
-import {Provider} from 'react-redux'
-import {createStore} from 'redux'
-import todoApp from './reducers/reducers'
 import AddMessage from './MessageBar';
 import {connect} from 'react-redux';
 import store from './containers/Store';
-import {addMessage, getMessages} from "./actions/action";
-import ReactDOM from 'react-dom';
+import {getMessages} from "./actions/action";
 
 class MessageList extends React.Component{
     componentDidMount() {
