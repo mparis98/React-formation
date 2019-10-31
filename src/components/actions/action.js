@@ -14,12 +14,10 @@ export const ADD_USERNAME = 'ADD_USERNAME';
  */
 
 export function addMessage(text) {
-    console.log({type: ADD_MESSAGE, text})
     return {type: ADD_MESSAGE, text}
 }
 
 export function addUsername(username) {
-    console.log({type: ADD_USERNAME, username})
     return {type: ADD_USERNAME, username}
 }
 

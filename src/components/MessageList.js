@@ -1,6 +1,6 @@
 import React from 'react';
 import MessageItem from "./MessageItem";
-import AddMessage from './MessageBar';
+import AddMessage from './containers/MessageBar';
 import {connect} from 'react-redux';
 import store from './containers/Store';
 import {getMessages} from "./actions/action";
@@ -23,12 +23,4 @@ class MessageList extends React.Component{
     }
 }
 
-const unsubscribe = store.subscribe(() =>
-    console.log(store.getState())
-)
-
-const mapStateToProps = (state) => {
-    return {messages: state.messages}
-}
-
-export default connect(mapStateToProps)(MessageList);
+export default MessageList;

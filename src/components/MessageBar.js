@@ -1,9 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { addMessage } from './actions/action'
+import ws from './containers/Websocket';
 
-
-let AddMessage = ({ addMessage }) => {
+let AddMessage = ({ addMessage, messages }) => {
 
     return (
         <div>
@@ -16,6 +14,7 @@ let AddMessage = ({ addMessage }) => {
                     <input type="submit" value="Envoyer" onClick={e => {
                         e.preventDefault()
                         addMessage(document.getElementById('textMessage').value)
+                        ws.send(JSON.stringify({type: 'ADD_MESSAGE',message: document.getElementById('textMessage').value, username:messages.username}))
                         document.getElementById('textMessage').value = ''
                     }}/>
                 </div>
@@ -25,6 +24,4 @@ let AddMessage = ({ addMessage }) => {
     )
 };
 
-const mapDispatchToProps = {addMessage}
-
-export default connect(null, mapDispatchToProps)(AddMessage);
+export default AddMessage;

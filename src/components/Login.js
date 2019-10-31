@@ -1,8 +1,6 @@
 import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import {connect} from 'react-redux';
-import {addUsername} from "./actions/action";
 import {
     useHistory,
 } from "react-router-dom";
@@ -30,6 +28,6 @@ let Login = ({addUsername}) => {
     )
 }
 
-const mapDispatchToProps = { addUsername }
 
-export default connect(null, mapDispatchToProps)(Login);
+
+export default Login;

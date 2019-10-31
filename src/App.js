@@ -3,6 +3,7 @@ import './App.css';
 import Chat from './components/Chat.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import store from './components/containers/Store'
+import LoginContainer from './components/containers/Login'
 
 import {Provider} from "react-redux";
 import {
@@ -11,7 +12,6 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Login from "./components/Login";
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
                                 <div className="col-md-6">
                                     <Provider store={store}>
                                         <Route exact path="/">
-                                            <Login/>
+                                            <LoginContainer/>
                                         </Route>
                                         <Route path="/chat">
                                             <Chat/>
