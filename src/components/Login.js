@@ -7,7 +7,8 @@ import {
     useHistory,
 } from "react-router-dom";
 
-let Login = ({dispatch})=> {
+
+let Login = ({addUsername}) => {
     let history = useHistory();
     return (
         <div className="row">
@@ -19,7 +20,7 @@ let Login = ({dispatch})=> {
             <div className="col-md-4">
                 <input type="submit" value="Envoyer" onClick={e => {
                     e.preventDefault()
-                    dispatch(addUsername(document.getElementById('textUsername').value))
+                    addUsername(document.getElementById('textUsername').value)
                     document.getElementById('textUsername').value = ''
                     history.push('/chat')
                 }} />
@@ -29,6 +30,6 @@ let Login = ({dispatch})=> {
     )
 }
 
-Login = connect()(Login)
+const mapDispatchToProps = { addUsername }
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

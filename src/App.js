@@ -19,12 +19,12 @@ function App() {
         <div className="App">
             <Router>
                 <div>
-                    <nav>
-                        <ul>
-                            <li>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li>
+                            <li className="nav-item">
                                 <Link to="/login">Login</Link>
                             </li>
                         </ul>

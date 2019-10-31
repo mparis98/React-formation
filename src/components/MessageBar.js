@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addMessage } from './actions/action'
 
 
-let AddMessage = ({ dispatch }) => {
+let AddMessage = ({ addMessage }) => {
 
     return (
         <div>
@@ -15,7 +15,7 @@ let AddMessage = ({ dispatch }) => {
                 <div className="col-md-4">
                     <input type="submit" value="Envoyer" onClick={e => {
                         e.preventDefault()
-                        dispatch(addMessage(document.getElementById('textMessage').value))
+                        addMessage(document.getElementById('textMessage').value)
                         document.getElementById('textMessage').value = ''
                     }}/>
                 </div>
@@ -25,6 +25,6 @@ let AddMessage = ({ dispatch }) => {
     )
 };
 
-AddMessage = connect()(AddMessage)
+const mapDispatchToProps = {addMessage}
 
-export default AddMessage;
+export default connect(null, mapDispatchToProps)(AddMessage);
